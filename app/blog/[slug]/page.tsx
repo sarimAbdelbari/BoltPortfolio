@@ -24,8 +24,11 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           date={post.date}
           readingTime={post.readingTime}
           tags={post.tags}
+          coverImage={post.coverImage}
         />
-        <PostContent content={post.content} />
+        <div className="mt-12">
+          <PostContent content={post.content} />
+        </div>
       </div>
     </div>
   );

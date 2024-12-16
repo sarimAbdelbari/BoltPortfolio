@@ -11,8 +11,8 @@ export function HeroTitle() {
       className="space-y-4 text-center"
     >
       <h1 className="text-4xl md:text-6xl font-bold">
-        <span className="text-white">
-          Web Dev
+        <span className="text-black dark:text-white">
+          Web Developer
         </span>
       </h1>
       <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
