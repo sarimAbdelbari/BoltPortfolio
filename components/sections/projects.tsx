@@ -12,7 +12,7 @@ export function ProjectsSection() {
       title="Featured Projects"
       description="Here are some of the projects I've worked on that showcase my skills and experience"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {projects.map((project, index) => (
           <ProjectCard key={project.slug} project={project} index={index} />
         ))}

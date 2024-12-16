@@ -2,7 +2,7 @@ import type { ISourceOptions } from "@tsparticles/engine";
 
 export const particlesConfig: ISourceOptions = {
   background: {
-    color: { value: "#0c0d27" },
+    color: { value: "transparent" },
   },
   fpsLimit: 120,
   interactivity: {
@@ -16,12 +16,19 @@ export const particlesConfig: ISourceOptions = {
     },
   },
   particles: {
-    color: { value: "#724ce9" },
+    color: { 
+      value: "#724ce9",
+      animation: {
+        enable: true,
+        speed: 2,
+        sync: true
+      }
+    },
     links: {
       color: "#724ce9",
       distance: 150,
       enable: true,
-      opacity: 0.3,
+      opacity: 0.2,
       width: 1,
     },
     move: {
@@ -34,11 +41,25 @@ export const particlesConfig: ISourceOptions = {
     },
     number: {
       density: { enable: true },
-      value: 150,
+      value: 100,
     },
-    opacity: { value: 1.0 },
-    shape: { type: "triangle" },
-    size: { value: { min: 1, max: 3 } },
+    opacity: { 
+      value: 0.4,
+      animation: {
+        enable: true,
+        speed: 0.5,
+        minimumValue: 0.2
+      }
+    },
+    shape: { type: "circle" },
+    size: { 
+      value: { min: 1, max: 3 },
+      animation: {
+        enable: true,
+        speed: 2,
+        minimumValue: 0.5
+      }
+    },
   },
   detectRetina: true,
 };

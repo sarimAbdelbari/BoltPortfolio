@@ -15,14 +15,14 @@ export function ContactSection() {
       title="Get in Touch"
       description="Have a project in mind or want to discuss opportunities? I'd love to hear from you!"
     >
-      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full px-4">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <Card className="p-6">
+          <Card className="p-6 h-full">
             <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
             <div className="space-y-4">
               <a
@@ -67,7 +67,7 @@ export function ContactSection() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <Card className="p-6">
+          <Card className="p-6 h-full">
             <form className="space-y-4">
               <div>
                 <Input
