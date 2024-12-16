@@ -23,12 +23,14 @@ export function PostCard({ post, index }: PostCardProps) {
     >
       <Link href={`/blog/${post.slug}`}>
         <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300">
-          <div className="relative h-48 w-full">
+          <div className="relative aspect-video w-full">
             <Image
               src={post.coverImage}
               alt={post.title}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover"
+              priority={index < 3}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
           </div>
