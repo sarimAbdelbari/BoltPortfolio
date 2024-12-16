@@ -1,7 +1,6 @@
-import { projects } from '@/lib/projects-data';
 import { ProjectDetails } from '@/components/projects/project-details';
+import { projects } from '@/lib/projects-data';
 
-// Generate static params for all project slugs
 export function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,

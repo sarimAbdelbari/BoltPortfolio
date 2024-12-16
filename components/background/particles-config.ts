@@ -48,7 +48,7 @@ export const particlesConfig: ISourceOptions = {
       animation: {
         enable: true,
         speed: 0.5,
-        minimumValue: 0.2
+        min: 0.2
       }
     },
     shape: { type: "circle" },
