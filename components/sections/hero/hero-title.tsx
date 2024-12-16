@@ -1,8 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
 
 export function HeroTitle() {
+  const { theme, resolvedTheme } = useTheme();
+  const isDark = theme === 'dark' || resolvedTheme === 'dark';
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -11,7 +15,7 @@ export function HeroTitle() {
       className="space-y-4 text-center"
     >
       <h1 className="text-4xl md:text-6xl font-bold">
-        <span className="text-black dark:text-white">
+        <span className={isDark ? "text-white" : "text-gray-900"}>
           Web Developer
         </span>
       </h1>

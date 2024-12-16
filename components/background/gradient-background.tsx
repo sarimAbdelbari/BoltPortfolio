@@ -2,10 +2,19 @@
 
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export function GradientBackground() {
-  const { theme } = useTheme();
-  const isDark = theme === 'dark';
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  const isDark = theme === 'dark' || resolvedTheme === 'dark';
 
   return (
     <div className={`fixed inset-0 -z-10 overflow-hidden ${
