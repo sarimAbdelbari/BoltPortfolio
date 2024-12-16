@@ -1,7 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { GalleryItem } from './gallery/gallery-item';
 import type { Project } from '@/lib/projects-data';
 
 interface ProjectGalleryProps {
@@ -18,20 +17,12 @@ export function ProjectGallery({ project }: ProjectGalleryProps) {
   return (
     <div className="space-y-6">
       {previewImages.map((image, index) => (
-        <motion.div
+        <GalleryItem
           key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.2 }}
-          className="relative h-[300px] rounded-lg overflow-hidden"
-        >
-          <Image
-            src={image}
-            alt={`Project preview ${index + 1}`}
-            fill
-            className="object-cover"
-          />
-        </motion.div>
+          src={image}
+          alt={`Project preview ${index + 1}`}
+          index={index}
+        />
       ))}
     </div>
   );

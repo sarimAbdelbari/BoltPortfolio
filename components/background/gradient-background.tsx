@@ -1,10 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
 
 export function GradientBackground() {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-br from-background via-secondary/50 to-background">
+    <div className={`fixed inset-0 -z-10 overflow-hidden ${
+      isDark 
+        ? 'bg-gradient-to-br from-background via-secondary/50 to-background' 
+        : 'bg-gradient-to-br from-blue-50 via-white to-blue-50'
+    }`}>
       <motion.div
         className="absolute inset-0 opacity-30"
         animate={{
@@ -16,7 +24,9 @@ export function GradientBackground() {
           repeatType: 'reverse',
         }}
         style={{
-          backgroundImage: 'radial-gradient(circle at center, var(--primary) 0%, transparent 50%)',
+          backgroundImage: `radial-gradient(circle at center, ${
+            isDark ? 'var(--primary)' : '#3b82f6'
+          } 0%, transparent 50%)`,
           backgroundSize: '100% 100%',
         }}
       />

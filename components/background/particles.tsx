@@ -29,7 +29,17 @@ export function ParticlesComponent({ id, className }: ParticlesComponentProps) {
   return (
     <Particles
       id={id}
-      options={particlesConfig}
+      options={{
+        ...particlesConfig,
+        particles: {
+          ...particlesConfig.particles,
+          color: {
+            value: document.documentElement.classList.contains('dark') 
+              ? "#724ce9" 
+              : "#3b82f6"
+          }
+        }
+      }}
       className={className}
     />
   );
